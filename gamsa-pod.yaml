@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rails-pod
+  labels:
+    app: gamsa
+spec:
+  containers:
+  - name: rails
+    image: eternal44/gamsa:latest
+    ports:
+    - containerPort: 3000

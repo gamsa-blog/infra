@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rails-dep
+  labels:
+    app: gamsa
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gamsa
+  template:
+    metadata:
+      labels:
+        app: gamsa
+    spec:
+      containers:
+      - name: rails
+        image: eternal44/gamsa:latest
+        ports:
+        - containerPort: 3000
